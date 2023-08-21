@@ -13,11 +13,11 @@ ridge_model=pickle.load((open('Models/ridge.pkl','rb')))
 standard_scaler=pickle.load((open('Models/scaler.pkl','rb')))
 
 ## Route for home page
-@app.route('/')
+@app.route('/w')
 def index():
     return render_template('index.html')
 
-@app.route('/predictdata', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='POST':
         Temperature=float(request.form.get('Temperature'))
